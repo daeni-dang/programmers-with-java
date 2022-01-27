@@ -1,0 +1,21 @@
+package StringToNumber;
+
+public class StringToNumber {
+    public int solution(String s) {
+        int answer = 0;
+        String[] num = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String[] word = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        for (int i=0; i<10; i++) {
+            s = s.replace(word[i], num[i]);
+        }
+        answer = Integer.parseInt(s);
+        return answer;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        StringToNumber stn = new StringToNumber();
+        String s = "one4seveneight";
+        System.out.println(stn.solution(s));
+    }
+}
